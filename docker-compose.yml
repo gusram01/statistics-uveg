@@ -1,0 +1,12 @@
+services:
+  py_for_data_analysis:
+    container_name: py_for_data_analysis
+    build: .
+    volumes:
+      - ./:/home/jovyan/work
+    ports:
+      - 8888:8888
+    environment:
+      DOCKER_STACKS_JUPYTER_CMD: ${DOCKER_STACKS_JUPYTER_CMD}
+    command: "start-notebook.sh --NotebookApp.token="
+
